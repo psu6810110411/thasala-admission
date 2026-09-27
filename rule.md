@@ -68,6 +68,29 @@
 
 ---
 
+### Rule 5: Branch-Based Workflow (แยก Branch พัฒนา)
+```
+❌ commit หรือ push งานใหม่เข้า branch `main` โดยตรง
+✅ แตก branch ใหม่ตามเนื้องานเสมอ (feat/..., fix/..., docs/...) แล้ว merge เมื่อเสร็จสมบูรณ์
+```
+
+**Branch Naming Convention:**
+* `feat/<feature-name>` — ฟีเจอร์ใหม่ เช่น `feat/persona-switcher`, `feat/step1-programs`
+* `fix/<bug-name>` — แก้ไขบัก เช่น `fix/gpa-calculation`
+* `style/<ui-change>` — ปรับแต่งธีมหรือหน้าตา เช่น `style/theme-gray-yellow`
+* `docs/<topic>` — อัปเดตเอกสาร เช่น `docs/readme-update`
+* `chore/<task>` — งานตั้งค่า/อัปเกรด เช่น `chore/setup-framer-motion`
+
+**วงจรการทำงาน (Workflow):**
+1. อัปเดต main ให้ล่าสุด: `git checkout main && git pull origin main`
+2. แตก branch: `git checkout -b feat/<feature-name>`
+3. พัฒนาและ commit ตาม Atomic Commits
+4. รวมเข้า main (ผ่าน Pull Request หรือ Merge หลังทดสอบผ่าน):
+   `git checkout main && git merge --no-ff feat/<feature-name> && git push origin main`
+5. ลบ branch เมื่อรวมเสร็จ: `git branch -d feat/<feature-name>`
+
+---
+
 ## 🎨 School Identity & Design System (โรงเรียนท่าศาลาประสิทธิ์ศึกษา)
 
 * **สีประจำโรงเรียน:** **สีเทา - สีเหลือง**
