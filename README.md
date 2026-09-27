@@ -154,7 +154,7 @@ thasala-admission/
 
 | ผู้พัฒนา | ช่องทางติดต่อ (Instagram) | หน้าที่รับผิดชอบ |
 |:---|:---:|:---|
-| **Arinchxi__** | [📸 @arinchxi__](https://instagram.com/arinchxi__/) | Lead Full-Stack Developer |
+| **Arinchxi___** | [📸 @arinchxi___](https://www.instagram.com/arinchxi___/) | Lead Full-Stack Developer |
 
 ---
 
