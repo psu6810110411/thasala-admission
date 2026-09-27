@@ -64,8 +64,8 @@
 | เฟส (Phase) | ขอบเขตงาน | สถานะ | ความคืบหน้า |
 |:---|:---|:---:|:---|
 | **Phase 1: Foundation & Design System** | ติดตั้ง Core Libs, Palette สีเทา-เหลือง, ฟอนต์ไทย (Prompt/Sarabun), Shared Navbar & Footer | 🟢 เสร็จสิ้น | 100% |
-| **Phase 2: Landing Page & Program Tracks** | Hero Section, Live Countdown, การ์ดหลักสูตร (SMTP/EP), เส้นเวลากำหนดการ | 🟡 ถัดไป | 0% |
-| **Phase 3: Dual-Mode Application Wizard** | สลับโหมดนักเรียน/ผู้ปกครอง, ฟอร์ม 4 สเต็ป, Drag & Drop เอกสาร, Auto-save draft | ⚪ รอดำเนินการ | 0% |
+| **Phase 2: Landing Page & Program Tracks** | Hero Section (Framer Motion), Live Countdown, การ์ดหลักสูตร ม.1/ม.4, ปฏิทินรับสมัคร, FAQ | 🟢 เสร็จสิ้น | 100% |
+| **Phase 3: Dual-Mode Application Wizard** | สลับโหมดนักเรียน/ผู้ปกครอง, ฟอร์ม 4 สเต็ป, Drag & Drop เอกสาร, Auto-save draft | 🟡 ถัดไป | 0% |
 | **Phase 4: Status Tracking & PDF Exam Pass** | ค้นหาด้วยเลขบัตร ปชช. + วันเกิด, ออกบัตรประจำตัวผู้เข้าสอบ PDF ติด QR Code | ⚪ รอดำเนินการ | 0% |
 | **Phase 5: Admin & Committee Portal** | แผงตรวจเอกสาร Side-by-side, ระบบอนุมัติสิทธิ์, ส่งออกรายงาน Excel | ⚪ รอดำเนินการ | 0% |
 | **Phase 6: Performance & SEO Polish** | Core Web Vitals (LCP < 2.5s), OpenGraph สำหรับแชร์ Facebook/LINE, Accessibility | ⚪ รอดำเนินการ | 0% |
