@@ -152,9 +152,9 @@ thasala-admission/
 
 ## 👥 ทีมพัฒนา (Developer)
 
-| ผู้พัฒนา | รหัสนักศึกษา | หน้าที่รับผิดชอบ |
+| ผู้พัฒนา | ช่องทางติดต่อ (Instagram) | หน้าที่รับผิดชอบ |
 |:---|:---:|:---|
-| **Arinchxi__** | `6810110411` | Lead Full-Stack Developer |
+| **Arinchxi__** | [📸 @arinchxi__](https://instagram.com/arinchxi__) | Lead Full-Stack Developer |
 
 ---
 
