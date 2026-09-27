@@ -68,7 +68,7 @@
 | **Phase 3: Dual-Mode Application Wizard** | สลับโหมดนักเรียน/ผู้ปกครอง, ฟอร์ม 4 สเต็ป, Drag & Drop เอกสาร, Auto-save draft | 🟢 เสร็จสิ้น | 100% |
 | **Phase 4: Status Tracking & PDF Exam Pass** | ค้นหาด้วยเลขบัตร ปชช. + วันเกิด, ออกบัตรประจำตัวผู้เข้าสอบ PDF ติด QR Code | 🟢 เสร็จสิ้น | 100% |
 | **Phase 5: Admin & Committee Portal** | แผงตรวจเอกสาร Side-by-side, ระบบอนุมัติสิทธิ์, ส่งออกรายงาน Excel | 🟢 เสร็จสิ้น | 100% |
-| **Phase 6: Performance & SEO Polish** | Core Web Vitals (LCP < 2.5s), OpenGraph สำหรับแชร์ Facebook/LINE, Accessibility | 🟡 ถัดไป | 0% |
+| **Phase 6: Performance & SEO Polish** | Core Web Vitals (LCP < 2.5s), OpenGraph สำหรับแชร์ Facebook/LINE, Schema.org, sitemap | 🟢 เสร็จสิ้น | 100% |
 
 ---
 
