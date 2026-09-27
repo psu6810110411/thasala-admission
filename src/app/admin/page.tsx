@@ -5,6 +5,10 @@ import { AdminContainer } from "@/components/admin/AdminContainer";
 export const metadata: Metadata = {
   title: "ระบบหลังบ้านฝ่ายรับนักเรียน | โรงเรียนท่าศาลาประสิทธิ์ศึกษา",
   description: "แผงควบคุมฝ่ายวิชาการและทะเบียน สำหรับตรวจสอบเอกสาร อนุมัติสิทธิ์สอบ และส่งออกข้อมูลผู้สมัคร",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function AdminPage() {
