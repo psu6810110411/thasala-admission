@@ -55,6 +55,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/admin" className="transition-colors hover:text-brand-gold-400 text-brand-gold-400/90 font-medium">
+                  ระบบตรวจเอกสาร (Admin)
+                </Link>
+              </li>
+              <li>
                 <Link href="/#programs" className="transition-colors hover:text-brand-gold-400">
                   ข้อมูลแผนการเรียน
                 </Link>
