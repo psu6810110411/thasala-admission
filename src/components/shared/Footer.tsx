@@ -108,11 +108,17 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Credits */}
+        {/* Bottom Credits & Disclaimer */}
         <div className="mt-12 flex flex-col items-center justify-between border-t border-brand-gray-800 pt-6 sm:flex-row gap-4">
-          <p className="text-xs text-brand-gray-400">
-            &copy; 2026 โรงเรียนท่าศาลาประสิทธิ์ศึกษา. สงวนลิขสิทธิ์ทุกประการ.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
+            <p className="text-xs text-brand-gray-400">
+              &copy; 2026 โรงเรียนท่าศาลาประสิทธิ์ศึกษา. สงวนลิขสิทธิ์ทุกประการ.
+            </p>
+            <span className="hidden sm:inline text-brand-gray-600">&bull;</span>
+            <p className="text-[11px] text-brand-gray-500">
+              โครงการนี้จัดทำขึ้นเพื่อการศึกษาและพัฒนาทักษะส่วนบุคคล (Personal Portfolio) มิใช่ระบบรับสมัครอย่างเป็นทางการ
+            </p>
+          </div>
           <div className="flex items-center gap-1 text-xs text-brand-gray-400">
             <span>พัฒนาโดย</span>
             <a
