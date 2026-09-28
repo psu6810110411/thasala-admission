@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, GraduationCap, Search, FileText } from "lucide-react";
+import { Menu, X, GraduationCap, Search, FileText, Calculator } from "lucide-react";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -52,6 +52,13 @@ export function Navbar() {
             className="text-sm font-medium text-brand-gray-600 transition-colors hover:text-brand-gray-900"
           >
             กำหนดการ
+          </Link>
+          <Link
+            href="/calculator"
+            className="flex items-center gap-1.5 text-sm font-medium text-brand-gray-700 hover:text-brand-gray-950 transition-colors"
+          >
+            <Calculator className="h-4 w-4 text-brand-gold-600" />
+            คำนวณคะแนน
           </Link>
           <Link
             href="/status"
@@ -115,6 +122,14 @@ export function Navbar() {
               className="block rounded-lg px-3 py-2 text-base font-medium text-brand-gray-800 hover:bg-brand-gray-100"
             >
               กำหนดการรับสมัคร
+            </Link>
+            <Link
+              href="/calculator"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 rounded-lg px-3 py-2 text-base font-medium text-brand-gray-800 hover:bg-brand-gray-100"
+            >
+              <Calculator className="h-4 w-4 text-brand-gold-600" />
+              คำนวณคะแนน & ประเมินโอกาส
             </Link>
             <Link
               href="/status"

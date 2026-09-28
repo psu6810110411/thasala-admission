@@ -57,6 +57,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/calculator" className="transition-colors hover:text-brand-gold-400">
+                  คำนวณคะแนน & ประเมินโอกาส
+                </Link>
+              </li>
+              <li>
                 <Link href="/status" className="transition-colors hover:text-brand-gold-400">
                   ตรวจสอบผลและพิมพ์บัตรสอบ
                 </Link>
