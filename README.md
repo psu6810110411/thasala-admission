@@ -69,7 +69,7 @@
 | **Phase 4: Status Tracking & PDF Exam Pass** | ค้นหาด้วยเลขบัตร ปชช. + วันเกิด, ออกบัตรประจำตัวผู้เข้าสอบ PDF ติด QR Code | 🟢 เสร็จสิ้น | 100% |
 | **Phase 5: Admin & Committee Portal** | แผงตรวจเอกสาร Side-by-side, ระบบอนุมัติสิทธิ์, ส่งออกรายงาน Excel | 🟢 เสร็จสิ้น | 100% |
 | **Phase 6: Performance & SEO Polish** | Core Web Vitals (LCP < 2.5s), OpenGraph สำหรับแชร์ Facebook/LINE, Schema.org, sitemap | 🟢 เสร็จสิ้น | 100% |
-| **Phase 7: Smart Score & Eligibility Calculator** | ระบบคำนวณคะแนนถ่วงน้ำหนักตามโครงการ (SMTP/EP/ปกติ) วิเคราะห์โอกาสสอบติด | 🟡 พร้อมพัฒนา | 0% |
+| **Phase 7: Smart Score & Eligibility Calculator** | ระบบคำนวณคะแนนถ่วงน้ำหนักตามโครงการ (SMTP/EP/ปกติ) วิเคราะห์โอกาสสอบติด | 🟢 เสร็จสิ้น | 100% |
 | **Phase 8: QR Code Exam Check-in Scanner** | ระบบสแกนบัตรสอบหน้าห้องสอบสำหรับกรรมการคุมสอบด้วยกล้องมือถือ/เว็บแคม | ⚪ รอดำเนินการ | 0% |
 | **Phase 9: Cloud Database (Supabase)** | ย้ายจาก LocalStorage สู่ Cloud DB (Postgres, RLS, Storage สำหรับไฟล์แนบ) | ⚪ รอดำเนินการ | 0% |
 | **Phase 10: Production Deployment & PWA** | Deploy บน Vercel พร้อม CI/CD GitHub Actions และรองรับการติดตั้งแอป PWA | ⚪ รอดำเนินการ | 0% |
