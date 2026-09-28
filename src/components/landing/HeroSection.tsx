@@ -35,21 +35,21 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-28">
+    <section className="relative overflow-hidden pt-8 pb-14 sm:pt-10 sm:pb-16">
       {/* Decorative Glow Elements */}
-      <div className="pointer-events-none absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-brand-gold-400/15 blur-3xl"></div>
-      <div className="pointer-events-none absolute top-1/3 -left-40 h-[450px] w-[450px] rounded-full bg-brand-gray-500/10 blur-3xl"></div>
+      <div className="pointer-events-none absolute -top-40 -right-40 h-[450px] w-[450px] rounded-full bg-brand-gold-400/15 blur-3xl"></div>
+      <div className="pointer-events-none absolute top-1/3 -left-40 h-[400px] w-[400px] rounded-full bg-brand-gray-500/10 blur-3xl"></div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="mx-auto max-w-3xl text-center space-y-7"
+          className="mx-auto max-w-4xl text-center space-y-5 sm:space-y-6"
         >
           {/* School Badge Pill */}
           <motion.div variants={itemVariants} className="inline-flex">
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand-gold-500/40 bg-brand-gold-100/70 px-4 py-1.5 text-xs font-semibold text-brand-gray-800 shadow-xs backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 rounded-full border border-brand-gold-500/40 bg-brand-gold-100/70 px-3.5 py-1 text-xs font-semibold text-brand-gray-800 shadow-xs backdrop-blur-md">
               <Sparkles className="h-3.5 w-3.5 text-brand-gold-600" />
               <span>เปิดรับสมัครนักเรียนใหม่ ปีการศึกษา 2569</span>
               <span className="h-1 w-1 rounded-full bg-brand-gold-500"></span>
@@ -57,29 +57,31 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Main Headline */}
+          {/* Main Headline - Balanced typography & partition */}
           <motion.h1
             variants={itemVariants}
-            className="text-3xl font-extrabold tracking-tight text-brand-gray-950 sm:text-5xl sm:leading-tight lg:text-6xl"
+            className="text-2xl sm:text-3.5xl lg:text-4xl font-extrabold tracking-tight text-brand-gray-950 leading-snug sm:leading-normal"
           >
-            ก้าวสู่อนาคตการศึกษาอย่างมั่นใจ <br className="hidden sm:inline" />
-            ณ{" "}
-            <span className="bg-gradient-to-r from-brand-gray-900 via-brand-gray-800 to-brand-gold-600 bg-clip-text text-transparent">
-              โรงเรียนท่าศาลาประสิทธิ์ศึกษา
+            <span className="block sm:inline-block">ก้าวสู่อนาคตการศึกษาอย่างมั่นใจ</span>{" "}
+            <span className="block sm:inline-block">
+              ณ{" "}
+              <span className="bg-gradient-to-r from-brand-gray-900 via-brand-gray-800 to-brand-gold-600 bg-clip-text text-transparent">
+                โรงเรียนท่าศาลาประสิทธิ์ศึกษา
+              </span>
             </span>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg text-brand-gray-600 leading-relaxed max-w-2xl mx-auto"
+            className="text-xs sm:text-sm md:text-base text-brand-gray-600 leading-relaxed max-w-xl mx-auto"
           >
             ระบบรับสมัครนักเรียนออนไลน์ สะดวกรวดเร็ว ใช้งานง่ายสำหรับทั้งนักเรียนและผู้ปกครอง
             รองรับห้องเรียนพิเศษ (SMTP, EP, CNP, DEP) และห้องเรียนปกติ พร้อมติดตามสถานะแบบเรียลไทม์
           </motion.p>
 
           {/* Countdown Timer Widget */}
-          <motion.div variants={itemVariants} className="pt-1">
+          <motion.div variants={itemVariants} className="pt-0.5">
             <CountdownTimer />
           </motion.div>
 

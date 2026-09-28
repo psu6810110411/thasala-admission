@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, GraduationCap, Search, FileText } from "lucide-react";
 
@@ -9,17 +10,24 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-brand-gray-200/80 bg-white/95 backdrop-blur-md transition-all">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 lg:px-8">
         {/* Brand / Logo */}
         <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand-gray-900 to-brand-gray-800 text-brand-gold-400 font-bold shadow-md transition-transform duration-200 group-hover:scale-105 border border-brand-gold-500/30">
-            <span className="text-base tracking-wider">ท.ศ.</span>
+          <div className="relative h-11 w-11 shrink-0 transition-transform duration-200 group-hover:scale-105">
+            <Image
+              src="/images/logo.png"
+              alt="ตราโรงเรียนท่าศาลาประสิทธิ์ศึกษา"
+              fill
+              sizes="44px"
+              className="object-contain"
+              priority
+            />
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-semibold tracking-tight text-brand-gray-900 sm:text-base">
+            <span className="text-sm font-bold tracking-tight text-brand-gray-900 sm:text-base leading-tight">
               โรงเรียนท่าศาลาประสิทธิ์ศึกษา
             </span>
-            <span className="text-xs text-brand-gray-500">
+            <span className="text-[11px] sm:text-xs text-brand-gray-500 font-medium">
               ระบบรับสมัครนักเรียนออนไลน์ (Admission Portal)
             </span>
           </div>

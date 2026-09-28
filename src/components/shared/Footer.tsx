@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MapPin, Globe, ExternalLink, Heart } from "lucide-react";
 
 export function Footer() {
@@ -16,8 +17,14 @@ export function Footer() {
           {/* School Brand */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-gray-800 text-brand-gold-400 font-bold border border-brand-gold-500/40 shadow-inner">
-                <span>ท.ศ.</span>
+              <div className="relative h-12 w-12 shrink-0">
+                <Image
+                  src="/images/logo.png"
+                  alt="ตราโรงเรียนท่าศาลาประสิทธิ์ศึกษา"
+                  fill
+                  sizes="48px"
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-base font-bold text-white">
