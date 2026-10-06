@@ -12,15 +12,13 @@ interface TimeLeft {
 
 export function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
+    days: 18,
+    hours: 16,
+    minutes: 30,
     seconds: 0,
   });
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     // Target admission deadline: End of admission period (approx. 20 days ahead)
     const targetDate = new Date();
     targetDate.setDate(targetDate.getDate() + 18);
@@ -44,15 +42,6 @@ export function CountdownTimer() {
     const interval = setInterval(calculateTime, 1000);
     return () => clearInterval(interval);
   }, []);
-
-  if (!mounted) {
-    return (
-      <div className="flex items-center justify-center gap-2 rounded-2xl bg-white/80 p-4 border border-brand-gray-200/80 shadow-xs max-w-md mx-auto">
-        <Clock className="h-5 w-5 text-brand-gold-600 animate-spin" />
-        <span className="text-xs text-brand-gray-500">กำลังโหลดเวลานับถอยหลัง...</span>
-      </div>
-    );
-  }
 
   const items = [
     { label: "วัน", value: timeLeft.days },
@@ -84,7 +73,7 @@ export function CountdownTimer() {
             key={idx}
             className="flex flex-col items-center justify-center rounded-xl bg-gradient-to-b from-brand-gray-50 to-brand-gray-100/70 p-2.5 sm:p-3 border border-brand-gray-200/60"
           >
-            <span className="text-xl sm:text-2xl font-black text-brand-gray-900 tracking-tight">
+            <span className="text-xl sm:text-2xl font-black text-brand-gray-900 tracking-tight" suppressHydrationWarning>
               {String(item.value).padStart(2, "0")}
             </span>
             <span className="text-[11px] font-medium text-brand-gray-500 mt-0.5">
