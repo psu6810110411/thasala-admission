@@ -43,7 +43,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
-          initial="hidden"
+          initial={false}
           animate="visible"
           className="mx-auto max-w-4xl text-center space-y-5 sm:space-y-6"
         >

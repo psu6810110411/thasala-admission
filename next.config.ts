@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  allowedDevOrigins: [
+    "*.trycloudflare.com",
+    "rapid-preserve-hierarchy-portraits.trycloudflare.com",
+  ],
 };
 
 export default nextConfig;
