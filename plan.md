@@ -151,13 +151,14 @@ flowchart LR
 
 ### ☁️ Phase 8: Cloud Database & Supabase Integration
 > **เป้าหมาย:** ยกระดับจาก Client Storage (LocalStorage) สู่ฐานข้อมูล Cloud จริงที่ปลอดภัย
+* **สถานะ:** 🟢 เสร็จสิ้น (PR พร้อมส่งมอบ)
 
 * **Tasks:**
-  * [ ] เชื่อมต่อ Supabase PostgreSQL (ตาราง `applicants`, `documents`, `exam_rooms`)
-  * [ ] นโยบายความปลอดภัย Row-Level Security (RLS) ปกป้องข้อมูลส่วนบุคคล
-  * [ ] อัปโหลดไฟล์เอกสาร (ปพ.1, รูปถ่าย) ขึ้น Supabase Storage Bucket พร้อมสร้าง Secure URL
-  * [ ] Real-time Subscription เพื่อให้อาจารย์และผู้สมัครเห็นการเปลี่ยนสถานะทันทีโดยไม่ต้องรีเฟรช
-  * [ ] Migration strategy: วิธีย้ายข้อมูลจาก localStorage เดิมขึ้น Supabase
+  * [x] เชื่อมต่อ Supabase PostgreSQL (ตาราง `applicants`, `documents`, `exam_rooms`)
+  * [x] นโยบายความปลอดภัย Row-Level Security (RLS) ปกป้องข้อมูลส่วนบุคคล
+  * [x] อัปโหลดไฟล์เอกสาร (ปพ.1, รูปถ่าย) ขึ้น Supabase Storage Bucket พร้อมสร้าง Secure URL
+  * [x] Real-time Subscription เพื่อให้อาจารย์และผู้สมัครเห็นการเปลี่ยนสถานะทันทีโดยไม่ต้องรีเฟรช
+  * [x] Migration strategy: วิธีย้ายข้อมูลจาก localStorage เดิมขึ้น Supabase
 * **Branch:** `feat/supabase-integration`
 * **Priority:** 🔴 High
 
