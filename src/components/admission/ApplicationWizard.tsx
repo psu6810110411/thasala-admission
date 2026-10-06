@@ -78,38 +78,32 @@ export function ApplicationWizard() {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setIsSubmitting(true);
+    try {
+      // Import the submission service dynamically or use it if imported
+      const { submitApplication } = await import("@/lib/submission");
+      
+      const finalSubmission = await submitApplication(formData);
 
-    setTimeout(() => {
-      // Generate unique Application ID: TS69-XXXX
-      const randomId = Math.floor(1000 + Math.random() * 9000);
-      const appNo = `TS69-${randomId}`;
-
-      const finalSubmission: SubmittedApplication = {
-        ...formData,
-        applicationNo: appNo,
-        submittedAt: new Date().toISOString(),
-        status: "pending",
-      };
-
-      // Save to submitted storage list (for status page lookup)
-      try {
-        const existingList = JSON.parse(
-          localStorage.getItem(SUBMITTED_STORAGE_KEY) || "[]"
-        );
-        existingList.push(finalSubmission);
-        localStorage.setItem(SUBMITTED_STORAGE_KEY, JSON.stringify(existingList));
-        // Clear current draft
-        localStorage.removeItem(DRAFT_STORAGE_KEY);
-      } catch (e) {
-        console.error("Storage error", e);
-      }
-
-      setIsSubmitting(false);
+      // Save to local storage list just for quick status lookup prototype if needed
+      // (Optional: can be removed if status page fetches purely from Supabase later)
+      const existingList = JSON.parse(
+        localStorage.getItem(SUBMITTED_STORAGE_KEY) || "[]"
+      );
+      existingList.push(finalSubmission);
+      localStorage.setItem(SUBMITTED_STORAGE_KEY, JSON.stringify(existingList));
+      
+      localStorage.removeItem(DRAFT_STORAGE_KEY);
+      
       setSubmittedData(finalSubmission);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 1200);
+    } catch (error) {
+      console.error("Submission failed:", error);
+      alert("เกิดข้อผิดพลาดในการส่งข้อมูล โปรดลองใหม่อีกครั้ง");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submittedData) {
