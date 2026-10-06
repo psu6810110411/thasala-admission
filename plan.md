@@ -195,8 +195,8 @@ flowchart LR
 
 ## 📋 Checklist ควบคุมคุณภาพก่อนส่งมอบ (Quality Gate)
 
-- [ ] **School Identity:** คุมโทนสีเทา-เหลือง (Slate & Amber) สม่ำเสมอ ไม่หลุดธีม
-- [ ] **No Clutter:** ไม่มีหน้าจอไหนที่มีตัวอักษรแออัดจนตาลาย มีระยะเว้น (Whitespace) โปร่งสบาย
-- [ ] **Mobile-First:** ใช้งานฟอร์มและแนบไฟล์บนมือถือได้ลื่นไหล 100%
-- [ ] **Accessibility:** คอนทราสต์สีตัวหนังสือผ่านเกณฑ์ WCAG 4.5:1, ปุ่มกดมีขนาดขั้นต่ำ 44×44px
-- [ ] **Git Discipline:** แตก branch ตามงาน, ใช้ Conventional Commits, รวมผ่าน PR
+- [x] **School Identity:** คุมโทนสีเทา-เหลือง (Slate & Amber) สม่ำเสมอ ไม่หลุดธีม
+- [x] **No Clutter:** ไม่มีหน้าจอไหนที่มีตัวอักษรแออัดจนตาลาย มีระยะเว้น (Whitespace) โปร่งสบาย
+- [x] **Mobile-First:** ใช้งานฟอร์มและแนบไฟล์บนมือถือได้ลื่นไหล 100%
+- [x] **Accessibility:** คอนทราสต์สีตัวหนังสือผ่านเกณฑ์ WCAG 4.5:1, ปุ่มกดมีขนาดขั้นต่ำ 44×44px
+- [x] **Git Discipline:** แตก branch ตามงาน, ใช้ Conventional Commits, รวมผ่าน PR
