@@ -182,11 +182,12 @@ flowchart LR
 
 ### 🚀 Phase 10: Production Deployment, CI/CD & PWA
 > **เป้าหมาย:** เผยแพร่เว็บสู่สาธารณะบน Vercel และรองรับการติดตั้งเป็นแอปมือถือ (PWA)
+* **สถานะ:** 🟢 เสร็จสิ้น (PR พร้อมส่งมอบ)
 
 * **Tasks:**
-  * [ ] Deploy โปรเจกต์ขึ้น Vercel พร้อมเชื่อมโยง Production Domain
-  * [ ] สร้าง GitHub Actions Workflow สำหรับตรวจสอบความถูกต้อง (Typecheck & Build Test) ทุก PR
-  * [ ] PWA Manifest & Service Worker เพื่อให้ผู้ปกครองและนักเรียนกด "Add to Home Screen" ได้เหมือนแอปจริง
+  * [x] Deploy โปรเจกต์ขึ้น Vercel พร้อมเชื่อมโยง Production Domain
+  * [x] สร้าง GitHub Actions Workflow สำหรับตรวจสอบความถูกต้อง (Typecheck & Build Test) ทุก PR
+  * [x] PWA Manifest & Service Worker เพื่อให้ผู้ปกครองและนักเรียนกด "Add to Home Screen" ได้เหมือนแอปจริง
 * **Branch:** `chore/deployment-pwa`
 * **Priority:** 🟢 Low
 

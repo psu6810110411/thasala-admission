@@ -66,6 +66,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  themeColor: "#F59E0B",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
