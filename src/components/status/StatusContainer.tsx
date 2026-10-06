@@ -53,44 +53,30 @@ export function StatusContainer() {
   const [isSearching, setIsSearching] = useState(false);
   const [notFoundMessage, setNotFoundMessage] = useState("");
 
-  const searchApplication = (query: string, birthDate?: string) => {
+  const searchApplication = async (query: string, birthDate?: string) => {
     setIsSearching(true);
     setNotFoundMessage("");
 
-    setTimeout(() => {
-      setIsSearching(false);
-      // Check demo match
-      if (
-        query === DEMO_APPLICATION.citizenId ||
-        query.toLowerCase() === DEMO_APPLICATION.applicationNo.toLowerCase()
-      ) {
-        setCurrentApp(DEMO_APPLICATION);
+    try {
+      // Import the dynamic fetcher
+      const { fetchApplicantByCitizenIdOrAppNo } = await import("@/lib/admin");
+      const found = await fetchApplicantByCitizenIdOrAppNo(query);
+
+      if (found) {
+        // Here we could also verify birthDate if provided
+        setCurrentApp(found);
         setViewMode("detail");
-        return;
-      }
-
-      // Check submitted list in localStorage
-      try {
-        const stored = JSON.parse(localStorage.getItem(SUBMITTED_STORAGE_KEY) || "[]");
-        const found = stored.find(
-          (app: SubmittedApplication) =>
-            app.citizenId === query.replace(/[^0-9]/g, "") ||
-            app.applicationNo.toLowerCase() === query.toLowerCase()
+      } else {
+        setNotFoundMessage(
+          `ไม่พบข้อมูลใบสมัครสำหรับ "${query}" กรุณาตรวจสอบเลขประจำตัวประชาชน หรือรหัสใบสมัครอีกครั้ง`
         );
-
-        if (found) {
-          setCurrentApp(found);
-          setViewMode("detail");
-        } else {
-          setNotFoundMessage(
-            `ไม่พบข้อมูลใบสมัครสำหรับ "${query}" กรุณาตรวจสอบเลขประจำตัวประชาชน หรือรหัสใบสมัครอีกครั้ง`
-          );
-        }
-      } catch (e) {
-        console.error("Storage lookup error", e);
-        setNotFoundMessage("เกิดข้อผิดพลาดในการค้นหาข้อมูล กรุณาลองใหม่อีกครั้ง");
       }
-    }, 400);
+    } catch (e) {
+      console.error("Supabase lookup error", e);
+      setNotFoundMessage("เกิดข้อผิดพลาดในการค้นหาข้อมูล กรุณาลองใหม่อีกครั้ง");
+    } finally {
+      setIsSearching(false);
+    }
   };
 
   useEffect(() => {
