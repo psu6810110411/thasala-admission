@@ -1,6 +1,7 @@
 "use client";
 
 import { ApplicationFormData } from "@/types/admission";
+import { step2Schema } from "@/lib/schemas";
 import { User, Phone, MapPin, School, ArrowLeft, ArrowRight, Shield } from "lucide-react";
 
 interface Step2PersonalInfoProps {
@@ -20,20 +21,9 @@ export function Step2PersonalInfo({
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (data.citizenId.replace(/[^0-9]/g, "").length !== 13) {
-      alert("กรุณากรอกเลขประจำตัวประชาชนให้ครบ 13 หลัก");
-      return;
-    }
-    if (!data.firstNameTh || !data.lastNameTh) {
-      alert("กรุณากรอกชื่อและนามสกุลภาษาไทย");
-      return;
-    }
-    if (!data.phone) {
-      alert("กรุณาระบุหมายเลขโทรศัพท์ติดต่อ");
-      return;
-    }
-    if (!data.previousSchool) {
-      alert("กรุณาระบุโรงเรียนเดิม");
+    const result = step2Schema.safeParse(data);
+    if (!result.success) {
+      alert(result.error.issues[0].message);
       return;
     }
     onNext();

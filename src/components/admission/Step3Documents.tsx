@@ -1,6 +1,7 @@
 "use client";
 
 import { ApplicationFormData } from "@/types/admission";
+import { step3Schema } from "@/lib/schemas";
 import { UploadCloud, FileText, Image as ImageIcon, Trash2, CheckCircle2, ArrowLeft, ArrowRight, AlertCircle } from "lucide-react";
 import Image from "next/image";
 
@@ -51,15 +52,10 @@ export function Step3Documents({
   };
 
   const handleNext = () => {
-    // For demo/prototype, allow proceeding with a gentle warning if files not uploaded yet
-    if (!data.photoFile || !data.transcriptFrontFile) {
-      if (
-        !confirm(
-          "คุณยังไม่ได้แนบรูปถ่าย หรือระเบียน ปพ.1 ครบถ้วน ต้องการดำเนินการต่อไปยังหน้าสรุปหรือไม่? (สามารถกลับมาอัปโหลดได้)"
-        )
-      ) {
-        return;
-      }
+    const result = step3Schema.safeParse(data);
+    if (!result.success) {
+      alert(result.error.issues[0].message);
+      return;
     }
     onNext();
   };

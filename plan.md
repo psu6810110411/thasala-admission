@@ -125,8 +125,8 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-    P7["Phase 7: Score Calculator"] --> P8["Phase 8: QR Check-in Scanner"]
-    P8 --> P9["Phase 9: Cloud Database (Supabase)"]
+    P7["Phase 7: Score Calculator"] --> P8["Phase 8: Cloud Database (Supabase)"]
+    P8 --> P9["Phase 9: QR Check-in Scanner"]
     P9 --> P10["Phase 10: Vercel & PWA"]
 ```
 
@@ -149,20 +149,7 @@ flowchart LR
 
 ---
 
-### 📷 Phase 8: QR Code Exam Check-in Scanner (`/scanner`)
-> **เป้าหมาย:** ระบบสแกนบัตรสอบหน้าห้องสอบสำหรับกรรมการคุมสอบด้วยกล้องมือถือ/เว็บแคม
-
-* **Tasks:**
-  * [ ] หน้าเว็บสำหรับอาจารย์คุมสอบ พร้อมเปิดกล้องตรวจจับ QR Code จากบัตรสอบอัตโนมัติ
-  * [ ] หน้าต่างยืนยันตัวตนทันที: แสดงรูปถ่ายผู้สมัคร, ชื่อ-สกุล, เลขที่นั่งสอบ, ห้องสอบ
-  * [ ] ปุ่ม 1-Click: "ยืนยันเข้าห้องสอบ" (บันทึกเวลาเข้าสอบ)
-  * [ ] แดชบอร์ดสรุปยอดผู้เข้าสอบรายห้องแบบ Real-time (มาสอบ / ขาดสอบ)
-* **Branch:** `feat/qr-attendance-scanner`
-* **Priority:** 🟡 Medium
-
----
-
-### ☁️ Phase 9: Cloud Database & Supabase Integration
+### ☁️ Phase 8: Cloud Database & Supabase Integration
 > **เป้าหมาย:** ยกระดับจาก Client Storage (LocalStorage) สู่ฐานข้อมูล Cloud จริงที่ปลอดภัย
 
 * **Tasks:**
@@ -170,7 +157,23 @@ flowchart LR
   * [ ] นโยบายความปลอดภัย Row-Level Security (RLS) ปกป้องข้อมูลส่วนบุคคล
   * [ ] อัปโหลดไฟล์เอกสาร (ปพ.1, รูปถ่าย) ขึ้น Supabase Storage Bucket พร้อมสร้าง Secure URL
   * [ ] Real-time Subscription เพื่อให้อาจารย์และผู้สมัครเห็นการเปลี่ยนสถานะทันทีโดยไม่ต้องรีเฟรช
+  * [ ] Migration strategy: วิธีย้ายข้อมูลจาก localStorage เดิมขึ้น Supabase
 * **Branch:** `feat/supabase-integration`
+* **Priority:** 🔴 High
+
+---
+
+### 📷 Phase 9: QR Code Exam Check-in Scanner (`/scanner`)
+> **เป้าหมาย:** ระบบสแกนบัตรสอบหน้าห้องสอบสำหรับกรรมการคุมสอบด้วยกล้องมือถือ/เว็บแคม
+
+* **Tasks:**
+  * [ ] หน้าเว็บสำหรับอาจารย์คุมสอบ พร้อมเปิดกล้องตรวจจับ QR Code จากบัตรสอบอัตโนมัติ (ใช้ `html5-qrcode` หรือ `@aspect/barcode-reader`)
+  * [ ] จัดการ Camera permission และมี UI รองรับกรณีผู้ใช้ไม่อนุญาต
+  * [ ] หน้าต่างยืนยันตัวตนทันที: แสดงรูปถ่ายผู้สมัคร, ชื่อ-สกุล, เลขที่นั่งสอบ, ห้องสอบ
+  * [ ] ปุ่ม 1-Click: "ยืนยันเข้าห้องสอบ" (บันทึกเวลาเข้าสอบลง Supabase)
+  * [ ] แดชบอร์ดสรุปยอดผู้เข้าสอบรายห้องแบบ Real-time (มาสอบ / ขาดสอบ)
+  * [ ] ระบบ Offline fallback หรือ ค้นหาด้วยรหัสผ่านมือ (Manual Search)
+* **Branch:** `feat/qr-attendance-scanner`
 * **Priority:** 🟡 Medium
 
 ---

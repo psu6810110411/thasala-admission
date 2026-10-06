@@ -2,6 +2,7 @@
 
 import { ApplicationFormData, EducationLevel } from "@/types/admission";
 import { PROGRAMS_M1, PROGRAMS_M4 } from "@/lib/constants";
+import { step1Schema } from "@/lib/schemas";
 import { BookOpen, Award, AlertCircle, CheckCircle2, ArrowRight } from "lucide-react";
 
 interface Step1ProgramProps {
@@ -29,12 +30,9 @@ export function Step1Program({ data, updateData, onNext }: Step1ProgramProps) {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!data.gpax) {
-      alert("กรุณาระบุเกรดเฉลี่ยสะสม (GPAX)");
-      return;
-    }
-    if (!isGpaxValid) {
-      alert("เกรดเฉลี่ยสะสมต้องอยู่ระหว่าง 0.00 ถึง 4.00");
+    const result = step1Schema.safeParse(data);
+    if (!result.success) {
+      alert(result.error.issues[0].message);
       return;
     }
     onNext();
