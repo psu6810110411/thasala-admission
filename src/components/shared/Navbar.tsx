@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Menu, X, GraduationCap, Search, FileText, Calculator } from "lucide-react";
+import { Menu, X, GraduationCap, Search, FileText, Calculator, QrCode } from "lucide-react";
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -66,6 +66,13 @@ export function Navbar() {
           >
             <Search className="h-4 w-4 text-brand-gold-600" />
             ตรวจสอบสถานะ
+          </Link>
+          <Link
+            href="/scanner"
+            className="flex items-center gap-1.5 text-sm font-medium text-brand-gray-700 hover:text-brand-gray-950 transition-colors"
+          >
+            <QrCode className="h-4 w-4 text-brand-gold-600" />
+            สแกนเข้าสอบ
           </Link>
         </nav>
 
@@ -138,6 +145,14 @@ export function Navbar() {
             >
               <Search className="h-4 w-4 text-brand-gold-600" />
               ตรวจสอบสถานะการสมัคร
+            </Link>
+            <Link
+              href="/scanner"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-2 rounded-lg px-3 py-2 text-base font-medium text-brand-gray-800 hover:bg-brand-gray-100"
+            >
+              <QrCode className="h-4 w-4 text-brand-gold-600" />
+              สแกนเข้าสอบ
             </Link>
           </div>
           <div className="pt-2">
