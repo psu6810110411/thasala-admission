@@ -2,6 +2,7 @@
 
 import { ApplicationFormData } from "@/types/admission";
 import { PROGRAMS_M1, PROGRAMS_M4 } from "@/lib/constants";
+import { step4Schema } from "@/lib/schemas";
 import { CheckSquare, ArrowLeft, Send, FileCheck, CheckCircle2, ShieldAlert } from "lucide-react";
 import Image from "next/image";
 
@@ -26,8 +27,9 @@ export function Step4Review({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!data.confirmedAccuracy) {
-      alert("กรุณาคลิกรับรองความถูกต้องของข้อมูลก่อนยืนยันส่งใบสมัคร");
+    const result = step4Schema.safeParse(data);
+    if (!result.success) {
+      alert(result.error.issues[0].message);
       return;
     }
     onSubmit();

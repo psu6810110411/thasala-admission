@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { ApplicationFormData, SubmittedApplication, EducationLevel } from "@/types/admission";
 import { INITIAL_FORM_DATA, DRAFT_STORAGE_KEY, SUBMITTED_STORAGE_KEY } from "@/lib/constants";
+import { draftSchema } from "@/lib/schemas";
 import { PersonaSwitcher } from "./PersonaSwitcher";
 import { StepIndicator } from "./StepIndicator";
 import { Step1Program } from "./Step1Program";
@@ -31,10 +32,14 @@ export function ApplicationWizard() {
     if (savedDraft) {
       try {
         const parsed = JSON.parse(savedDraft);
-        setFormData(parsed);
-        setHasDraft(true);
-        setDraftSavedTime("พบข้อมูลร่างที่บันทึกไว้");
-        return;
+        const validDraft = draftSchema.safeParse(parsed);
+        if (validDraft.success) {
+          // Merge with initial just in case fields are missing
+          setFormData({ ...INITIAL_FORM_DATA, ...validDraft.data } as ApplicationFormData);
+          setHasDraft(true);
+          setDraftSavedTime("พบข้อมูลร่างที่บันทึกไว้");
+          return;
+        }
       } catch (e) {
         console.error("Failed to parse draft", e);
       }
