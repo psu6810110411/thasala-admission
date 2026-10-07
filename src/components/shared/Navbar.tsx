@@ -42,13 +42,13 @@ export function Navbar() {
             หน้าแรก
           </Link>
           <Link
-            href="/#programs"
+            href="/programs"
             className="text-sm font-medium text-brand-gray-600 transition-colors hover:text-brand-gray-900"
           >
             แผนการเรียน
           </Link>
           <Link
-            href="/#timeline"
+            href="/timeline"
             className="text-sm font-medium text-brand-gray-600 transition-colors hover:text-brand-gray-900"
           >
             กำหนดการ
@@ -117,14 +117,14 @@ export function Navbar() {
               หน้าแรก
             </Link>
             <Link
-              href="/#programs"
+              href="/programs"
               onClick={() => setMobileMenuOpen(false)}
               className="block rounded-lg px-3 py-2 text-base font-medium text-brand-gray-800 hover:bg-brand-gray-100"
             >
               แผนการเรียน
             </Link>
             <Link
-              href="/#timeline"
+              href="/timeline"
               onClick={() => setMobileMenuOpen(false)}
               className="block rounded-lg px-3 py-2 text-base font-medium text-brand-gray-800 hover:bg-brand-gray-100"
             >
