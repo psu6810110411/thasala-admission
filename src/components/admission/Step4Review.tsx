@@ -136,6 +136,12 @@ export function Step4Review({
                 {data.parentPhone || "-"}
               </p>
             </div>
+            <div>
+              <p className="text-brand-gray-500">อาชีพผู้ปกครอง:</p>
+              <p className="font-bold text-brand-gray-900 mt-0.5">
+                {data.parentOccupation || "-"}
+              </p>
+            </div>
             <div className="sm:col-span-2">
               <p className="text-brand-gray-500">โรงเรียนเดิม:</p>
               <p className="font-bold text-brand-gray-900 mt-0.5">
