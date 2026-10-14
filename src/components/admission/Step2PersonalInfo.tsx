@@ -260,6 +260,22 @@ export function Step2PersonalInfo({
             />
           </div>
         </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="space-y-1.5">
+            <label className="block text-xs font-semibold text-brand-gray-700">
+              อาชีพผู้ปกครอง <span className="text-rose-500">*</span>
+            </label>
+            <input
+              type="text"
+              required
+              placeholder="เช่น รับราชการ, ค้าขาย, เกษตรกร"
+              value={data.parentOccupation}
+              onChange={(e) => updateData({ parentOccupation: e.target.value })}
+              className="w-full rounded-xl border border-brand-gray-300 p-3 text-sm text-brand-gray-900 focus:border-brand-gold-500 focus:outline-none"
+            />
+          </div>
+        </div>
       </div>
 
       {/* 3. Origin School & House Address */}
